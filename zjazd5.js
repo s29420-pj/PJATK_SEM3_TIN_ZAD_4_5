@@ -61,3 +61,63 @@ function increaseYearForAllCars(carsArray) {
 // cars[i].addCourseAndYear(newCourse, NewYear);
 // addCarIfPrice(new Auto(2012, 230000, 140000, 10001), cars);
 // addCarIfPrice(new Auto(2012, 230000, 140000, 9999), cars);
+
+// ZAD 12
+
+class Mark {
+    constructor(subject, value) {
+        this.subject = subject;
+        this.value = value;
+    }
+}
+
+class Student {
+    constructor(name, surname) {
+        this.name = name;
+        this.surname = surname;
+        this._grades = [];
+        this.average = 0;
+    }
+
+    hello() {
+        return `Welcome ${this.name} ${this.surname}! Your average is: ${this.average.toFixed(2)}.`;
+    }
+
+    countAverage() {
+        if (this._grades.length === 0) {
+            this.average = 0;
+            return;
+        }
+
+        const sumGrades = this._grades.reduce((sum, grade) => sum + grade.value, 0);
+        this.average = sumGrades / this._grades.length;
+    }
+
+    get grades() {
+        if (this._grades.length === 0) {
+            return 'No grades!';
+        }
+
+        const infoGrades = this._grades.map(grade => `${grade.subject} - grade ${grade.value}`).join(', ');
+        return `Subjects & grades: ${infoGrades}.`;
+    }
+
+    set grades(x) {
+        if (x instanceof Mark) {
+            this._grades.push(x);
+            this.countAverage();
+        } else {
+            console.error("Error");
+        }
+    }
+}
+
+// const student = new Student('Marek', 'Kowalski');
+// const grade1 = new Mark('MPR', 5);
+// const grade2 = new Mark('TIN', 5);
+// const grade3 = new Mark('POJ', 3);
+// student.grades = grade1;
+// student.grades = grade2;
+// student.grades = grade3;
+// console.log(student.hello());
+// console.log(student.grades);
