@@ -55,10 +55,10 @@ function increaseYearForAllCars(carsArray) {
 }
 
 // cars.forEach(car => console.log(car));
-// cars[i].increasePrice();
-// cars[i].decreaseEndPriceByYear();
-// cars[i].decreaseEndPriceByCourse();
-// cars[i].addCourseAndYear(newCourse, NewYear);
+// cars[0].increaseStartPrice();
+// cars[0].decreaseEndPriceByYear();
+// cars[0].decreaseEndPriceByCourse();
+// cars[0].addCourseAndYear(newCourse, NewYear);
 // addCarIfPrice(new Auto(2012, 230000, 140000, 10001), cars);
 // addCarIfPrice(new Auto(2012, 230000, 140000, 9999), cars);
 
